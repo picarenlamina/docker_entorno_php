@@ -1,4 +1,4 @@
-$servername = "localhost";
+$servername = "db";
 $username = "root";
 $password = "";
 $dbname = "test";
