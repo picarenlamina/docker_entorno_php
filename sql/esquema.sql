@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS test;
+USE test;
 CREATE TABLE usuarios (
     id int NOT NULL AUTO_INCREMENT,
     nombre varchar(255),
