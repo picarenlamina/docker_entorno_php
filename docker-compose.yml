@@ -14,7 +14,9 @@ services:
       - "3306:3306"
 
   web:
-    build: ./Dockerfile/dockerfile.yml
+    build:
+      context: ./Dockerfile
+      dockerfile: dockerfile.yml
     ports:
       - "80:80"
     expose:
