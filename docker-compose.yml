@@ -7,14 +7,13 @@ services:
       - ./data:/var/lib/mysql
       - ./sql:/docker-entrypoint-initdb.d
     environment:
-      MYSQL_ROOT_PASSWORD:
+      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: test
     ports:
      - "3306:3306"
     expose:
      - "3306"
-    networks:
-      - mynetwork
+
   web:
     build:
       context: ./Dockerfile
@@ -28,13 +27,11 @@ services:
     environment:
       MYSQL_HOST: db
       MYSQL_USER: root
-      MYSQL_PASSWORD: 
+      MYSQL_PASSWORD: password
       MYSQL_DB: test
-    networks:
-      - mynetwork
 
-networks:
-      - mynetwork
+
+
 volumes:
   data:
 
