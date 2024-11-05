@@ -24,6 +24,8 @@ services:
       - "80"
     volumes: 
       - ./src:/var/www/html
+    links:
+      - db
     environment:
       MYSQL_HOST: db
       MYSQL_USER: root
