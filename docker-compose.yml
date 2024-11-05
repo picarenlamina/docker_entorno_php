@@ -1,5 +1,5 @@
-version:  '3.3'
 services:
+ 
   db:
     image: mysql:8.2
     restart: always
@@ -7,12 +7,14 @@ services:
       - ./data:/var/lib/mysql
       - ./sql:/docker-entrypoint-initdb.d
     environment:
-      MYSQL_ROOT_PASSWORD: ""
-      MYSQL_DATABASE: "test"
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: test
     ports:
-      - "3306:3306"
-     expose:
-      - "3306"
+     - "3306:3306"
+    expose:
+     - "3306"
+    networks:
+      - mynetwork
   web:
     build:
       context: ./Dockerfile
@@ -28,7 +30,11 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: 
       MYSQL_DB: test
+    networks:
+      - mynetwork
 
+networks:
+      - mynetwork
 volumes:
   data:
 
