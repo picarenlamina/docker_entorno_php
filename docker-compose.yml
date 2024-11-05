@@ -2,7 +2,7 @@ services:
  
   db:
     image: mysql:8.2
-    restart: always
+
     volumes:
       - ./data:/var/lib/mysql
     #  - ./sql:/docker-entrypoint-initdb.d
