@@ -12,9 +12,10 @@ try {
 
   // set the resulting array to associative
   $result = $stmt->fetchAll();
-  foreach( $result as $item ) {
-    print( "<tr><td>%s</td><td>%s</td><td>%s</td></tr>", $item["id"], $item["nombre"], $item["apellidos"]);
-  }
+  //foreach( $result as $item ) {
+  //  print( "<tr><td>%s</td><td>%s</td><td>%s</td></tr>", $item["id"], $item["nombre"], $item["apellidos"]);
+  //}
+  print_r( $result );
 } catch(PDOException $e) {
   echo "Error: " . $e->getMessage();
 }
