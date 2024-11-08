@@ -1,6 +1,6 @@
 $servername = "db";
 $username = "root";
-$password = "";
+$password = "password";
 $dbname = "test";
 
 try {
