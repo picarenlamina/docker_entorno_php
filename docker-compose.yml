@@ -20,6 +20,8 @@ services:
       # Where our data will be persisted
     volumes:
       - data:/var/lib/mysql
+    networks:
+      - mynetwork
   web:
     build:
       context: ./Dockerfile
@@ -30,13 +32,16 @@ services:
       - "80"
     volumes: 
       - ./src:/var/www/html
-    links:
-      - db
     environment:
       MYSQL_HOST: db
       MYSQL_USER: user
       MYSQL_PASSWORD: password
       MYSQL_DB: test
+    networks:
+      - mynetwork
 # Names our volume
 volumes:
   data:
+networks:
+  mynetwork:
+    driver: bridge
