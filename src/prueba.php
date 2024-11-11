@@ -4,7 +4,6 @@
 //$password = "password";
 //$dbname = "test";
 
-
 $host= $_ENV["MYSQL_HOST"];
 $username = $_ENV["MYSQL_USER"];
 $password = $_ENV["MYSQL_PASSWORD"];
