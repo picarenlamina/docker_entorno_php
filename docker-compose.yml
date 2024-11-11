@@ -45,4 +45,4 @@ volumes:
   data:
 networks:
   mynetwork:
-    driver: bridge
+    driver: host
