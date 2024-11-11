@@ -45,4 +45,4 @@ volumes:
   data:
 networks:
   mynetwork:
-    driver: bridge
+    - traffic_default
