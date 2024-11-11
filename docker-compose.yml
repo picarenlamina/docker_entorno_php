@@ -27,6 +27,8 @@ services:
     build:
       context: ./Dockerfile
       dockerfile: dockerfile.yml
+    depends_on:
+      - db
     ports:
       - "80:80"
     expose:
