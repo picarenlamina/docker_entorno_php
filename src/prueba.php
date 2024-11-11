@@ -1,11 +1,17 @@
 <?php
-$servername = "db";
-$username = "root";
-$password = "password";
-$dbname = "test";
+//$servername = "db";
+//$username = "root";
+//$password = "password";
+//$dbname = "test";
+
+
+$host= $_ENV["MYSQL_HOST"];
+$username = $_ENV["MYSQL_USER"];
+$password = $_ENV["MYSQL_PASSWORD"];
+$dbname = $_ENV["MYSQL_DB"];
 
 try {
-  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $stmt = $conn->prepare("SELECT * FROM usuarios");
   $stmt->execute();
