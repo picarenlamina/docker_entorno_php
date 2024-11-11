@@ -2,7 +2,7 @@ version: '3.6'
 services:
   db:
     image: mysql:5.7
-    container_name: db
+    container_name: mysql
     restart: always
     environment:
       MYSQL_DATABASE: 'test'
@@ -27,6 +27,7 @@ services:
     build:
       context: ./Dockerfile
       dockerfile: dockerfile.yml
+    container_name: php
     ports:
       - "80:80"
     expose:
