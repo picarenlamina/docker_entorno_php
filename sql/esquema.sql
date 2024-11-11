@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS test;
 USE test;
 CREATE TABLE usuarios (
-    id int NOT NULL AUTO_INCREMENT,
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nombre varchar(255),
     apellidos varchar(255)
 );
