@@ -35,7 +35,7 @@ services:
     volumes: 
       - ./src:/var/www/html
     environment:
-      MYSQL_HOST: db
+      MYSQL_HOST: mysql
       MYSQL_USER: user
       MYSQL_PASSWORD: password
       MYSQL_DB: test
